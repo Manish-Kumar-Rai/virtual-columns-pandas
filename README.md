@@ -175,27 +175,29 @@ The original sales dataset is treated as raw input. The pipeline identifies and 
 
 ### Data quality report
 
-| Data quality issue | Rows affected | Treatment |
-| Repeated header rows | 1 | Removed |
-| Summary rows | 1 | Removed |
-| Exact duplicate records | 5 extra copies | Removed extra copies |
-| Missing discounts | 959 after deduplication | Replaced with 0 |
-| Missing unit prices | 4 | Recovered using product-price mapping |
-| Region whitespace | 8 | Trimmed |
-| Region capitalization | 10 | Standardized |
-| Quantity thousands separators | 4 | Removed internal spaces |
-| Decimal-comma prices | 7 | Converted to decimal points |
-| Invalid order dates | 0 | No invalid dates found |
-| Negative quantities | 6 | Preserved as possible returns |
+| Data quality issue            |           Rows affected | Treatment                             |
+|-------------------------------|------------------------:|---------------------------------------|
+| Repeated header rows          |                       1 | Removed                               |
+| Summary rows                  |                       1 | Removed                               |
+| Exact duplicate records       |          5 extra copies | Removed extra copies                  |
+| Missing discounts             | 959 after deduplication | Replaced with 0                       |
+| Missing unit prices           |                       4 | Recovered using product-price mapping |
+| Region whitespace             |                       8 | Trimmed                               |
+| Region capitalization         |                      10 | Standardized                          |
+| Quantity thousands separators |                       4 | Removed internal spaces               |
+| Decimal-comma prices          |                       7 | Converted to decimal points           |
+| Invalid order dates           |                       0 | No invalid dates found                |
+| Negative quantities           |                       6 | Preserved as possible returns         |
 
 ### Row summary
 
-| Description | Row count |
-| Original rows | 1,507 |
-| Repeated header rows removed | 1 |
-| Summary rows removed | 1 |
-| Extra duplicate records removed | 5 |
-| Final transaction rows | 1,500 |
+|           Description           | Row count |
+|:-------------------------------:|:---------:|
+| Original rows                   | 1,507     |
+| Repeated header rows removed    | 1         |
+| Summary rows removed            | 1         |
+| Extra duplicate records removed | 5         |
+| Final transaction rows          | 1,500     |
 
 The pipeline removed seven rows in total: one repeated header, one summary row, and five extra duplicate records.
 
@@ -242,12 +244,13 @@ Revenue is rounded to two decimal places.
 
 ### Revenue by region
 
-| Region | Revenue |
-| Central | 515,824.67 |
-| East | 442,219.91 |
-| North | 665,897.52 |
-| South | 504,036.04 |
-| West | 442,268.89 |
+|   Region  |      Revenue     |
+|:---------:|:----------------:|
+| Central   | 515,824.67       |
+| East      | 442,219.91       |
+| North     | 665,897.52       |
+| South     | 504,036.04       |
+| West      | 442,268.89       |
 | **Total** | **2,570,247.03** |
 
 6\. Running Tests
